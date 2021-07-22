@@ -17,8 +17,14 @@ function App() {
 
   return (
     <div className="App">
+<<<<<<< HEAD
       <h1>React Here</h1>
       <Users user={users} />
+=======
+      <header className="App-header">
+       
+      </header>
+>>>>>>> 32074a4 (first)
     </div>
   );
 }
