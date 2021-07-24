@@ -17,8 +17,8 @@ function App() {
 
   return (
     <div className="App">
-      <Users user={users} />
       <h1>React Here</h1>
+      <Users user={users} />
     </div>
   );
 }
