@@ -1,12 +1,13 @@
-import React from "react";
+import './App.css';
 import { useState, useEffect } from "react";
 import Users from "./components/Users";
-import tvShowList from "./components/tvShowList";
+import TvShowList from "./components/tvShowList";
 
 function App() {
   const [users, setUsers] = useState([]);
 
   const [shows, setShows] = useState([]);
+  console.log(shows);
 
   const [searchString, setSearchString] = useState("simpsons");
 
@@ -16,17 +17,16 @@ function App() {
     api: "https://api.tvmaze.com/search/shows",
   };
   function getShows(searchString) {
-    /* Build a URL from the searchOptions object */
+  
     const url = `${searchOptions.api}?q=${searchString}`;
 
     fetch(url)
       .then((response) => response.json())
       .then((response) => {
-        setShows(response.data);
-        // Set the lastSearch to the searchString value
-        setLastSearch(searchString);
-        // Set the searchString in state to an empty string
-        setSearchString("");
+        console.log(response[0].show);
+        setShows(response[0].show);
+        // setLastSearch(searchString);
+        // setSearchString("");
       })
       .catch(console.error);
   }
@@ -40,14 +40,25 @@ function App() {
   // }
 
   useEffect(() => {
-    getShows(searchString);
+    fetch('http://localhost:3001/users')
+      .then((res) => {
+        console.log(res);
+        return res.json();
+      })
+      .then((data) => setUsers(data.usersList));
   }, []);
+
+  useEffect(() => {
+    getShows(searchString);
+    console.log(shows)
+  }, []);
+ 
 
   return (
     <div className="App">
       <h1>Tv Show Review App</h1>
-      <Users user={users} />
-      <tvShowList shows={shows} />
+         <Users user={users} />
+         <TvShowList shows={shows} />
 
       {/* <SearchForm
         handleChange={handleChange}

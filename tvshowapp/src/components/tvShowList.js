@@ -1,21 +1,18 @@
-const tvShowList = ({shows}) => {
+const TvShowList = ({shows}) => {
+    console.log(shows);
     if (!shows) {
         return <h2>No Shows Found!</h2>
       }
-      
-    
-      return (
-        <div className="shows">
-          {shows.map(show => (
-
-            <div key={show} className="show">
-              <li> {show.name}  </li>
-            </div>
-
-          ))}
-
+        return (
+            <div className="shows">
+                    {/* {shows.map(show => (
+                        <div  className="show">
+                            {show.name} 
+                       </div>
+                    ))} */}
+                    {shows.url}
         </div>
       )
     }
 
-export default tvShowList
+export default TvShowList
