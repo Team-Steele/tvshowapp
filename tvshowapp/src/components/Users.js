@@ -60,8 +60,8 @@ const Users = () => {
              />
            </div>
            <div className="form-control">
-             <label htmlFor="tvShows">Enter TV Show: </label>
-             <input
+             <label htmlFor="tvShows">Enter TV Show(s): </label>
+             <textarea
                type="text"
                id="tvShows"
                name="tvShows"
