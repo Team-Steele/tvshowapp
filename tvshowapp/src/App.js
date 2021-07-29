@@ -7,17 +7,6 @@ import Show from './components/Show';
 import Home from './components/Home'
 
 function App() {
-  // const [users, setUsers] = useState([]);
-  // console.log(users);
-
-  // useEffect(() => {
-  //   fetch('/users/')
-  //     .then((res) => {
-  //       console.log(res);
-  //       return res.json();
-  //     })
-  //     .then((data) => setUsers(data.usersList));
-  // }, []);
 
   return (
     <div className="App">
