@@ -12,14 +12,16 @@ const Users = () => {
   const [users, setUser] = useState(info)
   console.log(users)
 
-   useEffect(() => {
-     fetch('/')
-       .then((res) => {
-         console.log(res);
-         return res.json();
-       })
-       .then((data) => setInfo(data.usersList));
-   }, []);
+  
+
+  //  useEffect(() => {
+  //    fetch('/')
+  //      .then((res) => {
+  //        console.log(res);
+  //        return res.json();
+  //      })
+  //      .then((data) => setInfo(data.usersList));
+  //  }, []);
   
   const handleSubmit = (e) => { 
     e.preventDefault() 
