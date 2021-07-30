@@ -1,28 +1,36 @@
 import './App.css';
+import './lib/font-awesome/css/all.min.css';
 import { useState, useEffect } from 'react';
-import { Route, Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route, Link, Switch } from 'react-router-dom';
 import Users from './components/Users';
 import Show from './components/Show';
 import Home from './components/Home'
 
+
 function App() {
 
   return (
-    <div className="App">
-      <h1>TV Show App</h1>
+    <div className="container">
+      <div className="inner-content">
+        <div className="brand">
+          <Link to="/">
+            <h3>Home</h3>
+          </Link>
+        </div>
+
+        <ul className="nav-links">
+        <li>
+          <Link to='/'>Home</Link>
+        </li>
+        <li>
+          <Link to='/shows'>Shows</Link>
+        </li>
+        <li>
+          <Link to='/users'>Add</Link>
+        </li>
+        </ul>
+      </div>
       {/* <Users user={users} /> */}
-      <nav>
-        <Link to="/">
-          <h3>Home</h3>
-        </Link>
-        <Link to="/users">
-          <h3>Users</h3>
-        </Link>
-        <Link to="/shows">
-          <h3>Shows</h3>
-        </Link>
-      </nav>
 
       <main>
         <Route exact path="/" component={Home} />

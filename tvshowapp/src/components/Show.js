@@ -18,10 +18,11 @@ const Show = () => {
     <div>
       <h1>Show Route</h1>
       {list.map((item) => {
+        console.log(item)
         return (
           <div key={item.id}>
             <h4>{item.user}</h4>
-            <p>{item.tvShows}</p>
+           <h5>{item.tvShows}</h5>
           </div>
         );
       })}
