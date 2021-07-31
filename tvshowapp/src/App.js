@@ -3,10 +3,17 @@ import './lib/font-awesome/css/all.min.css';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Link, Switch } from 'react-router-dom';
+
+import { Route, Link } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Users from './components/Users';
 import Show from './components/Show';
 import Home from './components/Home'
+<<<<<<< HEAD
 import HomePage from './components/HomePage';
+=======
+import ShowList from './components/ShowList';
+>>>>>>> e17a822 (saved changes before keba rebase)
 
 
 
