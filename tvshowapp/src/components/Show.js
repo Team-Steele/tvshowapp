@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import data from '../components/user-seeds.json';
 
-const Show = () => {
-  const [list, setList] = useState([{ data }]);
+
+const Show = ( ) => {
+  const [list, setList] = useState([]);
 
   useEffect(() => {
-    fetch('/shows')
+    fetch('http://localhost:3001/shows')
       .then((res) => {
         console.log(res);
         return res.json();
@@ -22,8 +22,16 @@ const Show = () => {
         return (
           <div key={item.id}>
             <h4>{item.user}</h4>
-            <p>{item.tvShows}</p>
-            <p>{item.comment}</p>
+
+            <h5>{item.tvShows}</h5>
+            <h5>{item._id}</h5>
+            {item.opinion
+              ? item.opinion.map((comment) => <h1>{comment.comment}</h1>)
+              : null}
+            <a href="/" class="btn btn-outline-secondary">
+              Edit
+            </a>
+
           </div>
         );
       })}
