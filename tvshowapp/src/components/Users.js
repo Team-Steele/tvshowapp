@@ -25,8 +25,8 @@ const Users = () => {
   
   const handleSubmit = (e) => { 
     e.preventDefault() 
-    if(name && tvShows) {
-      const person = { name, tvShows }
+    if(name) {
+      const person = { name }
       setUser((users) => {
         return [...users, person]
       })
@@ -61,7 +61,7 @@ const Users = () => {
                onChange={(e) => setName(e.target.value)}
              />
            </div>
-           <div className="form-control">
+           {/* <div className="form-control">
              <label htmlFor="tvShows">Enter TV Show(s): </label>
              <textarea
                type="text"
@@ -70,7 +70,7 @@ const Users = () => {
                value={tvShows}
                onChange={(e) => setTvShows(e.target.value)}
              />
-           </div>
+           </div> */}
            <button type="submit">Submit</button>
          </form>
        </article>
@@ -80,10 +80,10 @@ const Users = () => {
          return (
            <div>
              <h4>User Name: {person.name}</h4>
-             <p>
+             {/* <p>
                List of Shows:
                {person.tvShows}
-             </p>
+             </p> */}
            </div>
          );
        })}
