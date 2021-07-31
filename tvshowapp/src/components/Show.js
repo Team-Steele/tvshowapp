@@ -22,6 +22,7 @@ const Show = ( ) => {
         return (
           <div key={item.id}>
             <h4>{item.user}</h4>
+
             <h5>{item.tvShows}</h5>
             <h5>{item._id}</h5>
             {item.opinion
@@ -30,6 +31,7 @@ const Show = ( ) => {
             <a href="/" class="btn btn-outline-secondary">
               Edit
             </a>
+
           </div>
         );
       })}
