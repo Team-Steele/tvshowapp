@@ -38,6 +38,7 @@ function App() {
         <Route path="/shows" component={Show} />
       </main>
     </div>
+   
   );
 }
 

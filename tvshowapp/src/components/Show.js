@@ -22,7 +22,8 @@ const Show = () => {
         return (
           <div key={item.id}>
             <h4>{item.user}</h4>
-           <h5>{item.tvShows}</h5>
+            <p>{item.tvShows}</p>
+            <p>{item.comment}</p>
           </div>
         );
       })}
