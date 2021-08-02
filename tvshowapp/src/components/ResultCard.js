@@ -1,16 +1,22 @@
-import React, { useContext } from 'react'
+import React, { useState } from 'react'
+
 import axios from 'axios'
 
-const url = 'http://localhost:3001/users';
+
 
 export const ResultCard = ({show, userID}) => {
+  const [opinion, setOpinion] = useState([])
+  
+
+  console.log("userID", userID)
  
-  const addTvShow = (show) => {
+  const addTvShow = (show, userID) => {
     const submitData = {
       tvShows: [show.name],
-      opinion: [],
-      user: userID
+      opinion: [show.opinion],
+      user: '610727059c7c9b5f90451785'
     };
+    console.log(submitData.user)
     axios.put(`http://localhost:3001/users/${submitData.user}`, submitData)
     .then((res) => {
       console.log(res)
@@ -18,13 +24,15 @@ export const ResultCard = ({show, userID}) => {
 
   }
 
+
+
     return (
       <div className="results-card">
         <div className="poster-wrapper">
           <div className="info">
             <div className="header">
-              <h3 className="title">{show.name}</h3>
-              <h4 className="release-date">{show.overview}</h4>
+              <h3 style={{color: 'springgreen', backgroundColor: 'gray'}}className="title">{show.name}</h3>
+              <h4 style={{color: 'salmon', backgroundColor: 'white'}}className="release-date">{show.overview}</h4>
             </div>
           </div>
           {show.poster_path ? (
@@ -37,8 +45,27 @@ export const ResultCard = ({show, userID}) => {
           )}
         </div>
         <div className="controls">
-          <button className="btn" onClick={() => addTvShow(show)}>Add Show</button>
+          <button className="btn" onClick={() => addTvShow(show)}>
+            Add Show
+          </button>
         </div>
+        {/* <article>
+          <form onClick={() => addTvShow(show)}>
+            <div className="form-control">
+              <label htmlFor="opinion">Add/Edit Comment: </label>
+              <textarea
+                type="text"
+                id="opinion"
+                name="opinion"
+                value={opinion}
+                onChange={(e) => setOpinion(e.target.value)}
+              />
+            </div>
+            <button>
+              Add Comment
+            </button>
+          </form>
+        </article> */}
       </div>
     );
 }

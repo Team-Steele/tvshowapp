@@ -197,13 +197,13 @@ header .nav-links li:last-child {
 }
 
 .count-pill {
-  display: block;
-  background-color: var(--secondary);
-  padding: 5px 15px;
+  display: inline-block;
+  background-color:#032541;
+  padding: 10px 15px;
   font-size: 1.125rem;
-  font-weight: 600;
-  border-radius: 999px;
-  color: var(--primary);
+  font-weight: 100;
+  border-radius: 5px;
+  color: whitesmoke;
 }
 
 .movie-page .heading {

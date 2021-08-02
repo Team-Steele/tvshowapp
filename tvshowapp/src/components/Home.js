@@ -2,7 +2,7 @@ import React from 'react'
 import  { useState } from 'react'
 import { ResultCard } from './ResultCard'
 
-const Home = () => {
+const Home = (userID) => {
     const [query, setQuery] = useState('')
     const [results, setResults] = useState ([{}])
 
@@ -26,29 +26,31 @@ const Home = () => {
    };
     
     return (
-        <div className='add-page'>
-            <div className="container">
-                <div className="add-content">
-                    <div className="input-wrapper">
-                        <input type="text" placeholder="Enter TV Show" 
-                        value={query}
-                        onChange={onChange}
-                        />
-                    </div>
-                    {results.length > 0 && (
-                        <ul className='results'>
-                            {results.map((show) => (
-                                <li key={show.id}>
-                                    {/* {show.name} */}
-                                <ResultCard show={show} />
-                                </li>
-                            ))}
-                        </ul>
-                    )}
-                </div>
+      <div style={{ paddingTop: '100px' }} className="add-page">
+        <div className="container">
+          <div className="add-content">
+            <div className="input-wrapper">
+              <input
+                type="text"
+                placeholder="Search TV Show"
+                value={query}
+                onChange={onChange}
+              />
             </div>
+            {results.length > 0 && (
+              <ul className="results">
+                {results.map((show) => (
+                  <li key={show.id}>
+                    {/* {show.name} */}
+                    <ResultCard show={show} userID={userID} />
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
         </div>
-    )
+      </div>
+    );
 }
 
 export default Home
