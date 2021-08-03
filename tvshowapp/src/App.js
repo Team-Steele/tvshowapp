@@ -9,11 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Users from './components/Users';
 import Show from './components/Show';
 import Home from './components/Home'
-<<<<<<< HEAD
 import HomePage from './components/HomePage';
-=======
-import ShowList from './components/ShowList';
->>>>>>> e17a822 (saved changes before keba rebase)
 
 
 
