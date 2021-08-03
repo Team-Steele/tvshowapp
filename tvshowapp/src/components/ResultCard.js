@@ -53,7 +53,7 @@ export const ResultCard = ({show, userID}) => {
         <article>
           <form onSubmit={addTvShow}>
             <div className="form-control">
-              <label htmlFor="opinion">Add/Edit Comment: </label>
+              <label htmlFor="opinion">Add Comment: </label>
               <textarea
                 type="text"
                 id="opinion"
@@ -63,7 +63,7 @@ export const ResultCard = ({show, userID}) => {
               />
             </div>
             <button>
-              Add Comment
+              Submit
             </button>
           </form>
         </article>
