@@ -5,16 +5,17 @@ import axios from 'axios'
 
 
 export const ResultCard = ({show, userID}) => {
-  const [opinion, setOpinion] = useState([])
+  const [opinion, setOpinion] = useState(null)
   
 
   console.log("userID", userID)
  
   const addTvShow = (show, userID) => {
+    console.log("got the show", show)
     const submitData = {
-      tvShows: [show.name],
-      opinion: [show.opinion],
-      user: '610727059c7c9b5f90451785'
+      tvShows: show.name,
+      opinion: opinion ? opinion : null,
+      user: '61088eff87dbae11051761a8',
     };
     console.log(submitData.user)
     axios.put(`http://localhost:3001/users/${submitData.user}`, submitData)
@@ -49,8 +50,8 @@ export const ResultCard = ({show, userID}) => {
             Add Show
           </button>
         </div>
-        {/* <article>
-          <form onClick={() => addTvShow(show)}>
+        <article>
+          <form onSubmit={addTvShow}>
             <div className="form-control">
               <label htmlFor="opinion">Add/Edit Comment: </label>
               <textarea
@@ -65,7 +66,7 @@ export const ResultCard = ({show, userID}) => {
               Add Comment
             </button>
           </form>
-        </article> */}
+        </article>
       </div>
     );
 }

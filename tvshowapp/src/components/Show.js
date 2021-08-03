@@ -1,16 +1,14 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
-const Show = ( {handleEditClick, id, show } ) => {
- 
+const Show = ({ handleEditClick, id, show }) => {
   const [list, setList] = useState([]);
-  const [newList, setNewList] = useState([])
+  const [newList, setNewList] = useState([]);
 
   const deleteItem = (id) => {
     axios.delete('/delete/' + id);
     console.log(`${id}`);
   };
-
 
   useEffect(() => {
     fetch('http://localhost:3001/shows')
@@ -28,14 +26,25 @@ const Show = ( {handleEditClick, id, show } ) => {
   };
 
   return (
-    <div >
+    <div>
       <h1>User Profiles</h1>
 
       {list.map((item) => {
         console.log(item);
         return (
           <div key={item.id}>
-            <h4 className="count-pill" style={{backgroundColor: 'gray', fontSize:'27px', marginBottom: '5px', fontWeight: 'bold', textDecorationLine: 'underline'}}>{item.user}</h4>
+            <h4
+              className="count-pill"
+              style={{
+                backgroundColor: 'gray',
+                fontSize: '27px',
+                marginBottom: '5px',
+                fontWeight: 'bold',
+                textDecorationLine: 'underline',
+              }}
+            >
+              {item.user}
+            </h4>
 
             {item.tvShows.map((show) => (
               <div>
