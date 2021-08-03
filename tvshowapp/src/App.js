@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { Route, Link, Switch } from 'react-router-dom';
 
-import { Route, Link } from 'react-router-dom';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Users from './components/Users';
 import Show from './components/Show';
