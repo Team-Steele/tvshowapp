@@ -33,6 +33,7 @@ const Show = ({ handleEditClick, id, show }) => {
         console.log(item);
         return (
           <div key={item.id}>
+
             <h4
               className="count-pill"
               style={{
@@ -52,6 +53,12 @@ const Show = ({ handleEditClick, id, show }) => {
               </div>
             ))}
 
+
+            <h4>{item.user}</h4>
+
+            <h5>{item.tvShows}</h5>
+            <h5>{item._id}</h5>
+
             {item.opinion
               ? item.opinion.map((comment) => <h1>{comment.comment}</h1>)
               : null}
@@ -66,6 +73,7 @@ const Show = ({ handleEditClick, id, show }) => {
               Edit
             </a>
 
+
             <button
               onClick={() => deleteItem(item._id)}
               className="btn btn-outline-secondary"
@@ -73,6 +81,7 @@ const Show = ({ handleEditClick, id, show }) => {
               Delete
             </button>
             {/* <button className="btn btn-outline-secondary">Edit</button> */}
+
           </div>
         );
       })}
