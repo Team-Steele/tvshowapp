@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
-const Show = ({ handleEditClick, id, show }) => {
+const Show = ({ setUserID, id, show }) => {
   const [list, setList] = useState([]);
   const [newList, setNewList] = useState([]);
 
@@ -22,7 +22,7 @@ const Show = ({ handleEditClick, id, show }) => {
 
   const handleClick = (id) => {
     console.log('handleClick Function', id);
-    handleEditClick(id);
+    setUserID(id);
   };
 
   return (
