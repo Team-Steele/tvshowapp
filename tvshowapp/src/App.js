@@ -8,9 +8,12 @@ import Show from './components/Show';
 import Home from './components/Home'
 
 
+// const user = user.find(user => user._id == userID)
+
 
 function App() {
 
+  const [userID, setUserID] = useState(null)
   return (
     <div className="container">
     
@@ -25,6 +28,7 @@ function App() {
               <ul className="nav-links">
                 <li>
                   <Link to="/">Home</Link>
+                  
                 </li>
                 <li>
                   <Link to="/shows">Shows</Link>
@@ -32,6 +36,7 @@ function App() {
                 <li>
                   <Link to="/users">Add</Link>
                 </li>
+                
               </ul>
             </div>
              
@@ -40,9 +45,12 @@ function App() {
           
             
               <Switch>
-              <Route exact path="/" component={Home} />
+                {/*pass in user ID to home*/}
+              <Route exact path="/" component={Home}/>
               <Route path="/users" component={Users} />
+              {/*pass in user ID to */}
               <Route path="/shows" component={Show} />
+          
           </Switch>
         </Router>
             

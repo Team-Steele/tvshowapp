@@ -80,10 +80,10 @@ const Users = () => {
          return (
            <div>
              <h4>User Name: {person.name}</h4>
-             {/* <p>
+             <p>
                List of Shows:
                {person.tvShows}
-             </p> */}
+             </p>
            </div>
          );
        })}

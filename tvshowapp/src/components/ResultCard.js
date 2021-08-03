@@ -3,9 +3,11 @@ import axios from 'axios'
 
 const url = 'http://localhost:3001/users';
 
+
 export const ResultCard = ({show, userID}) => {
  
   const addTvShow = (show) => {
+    
     const submitData = {
       tvShows: [show.name],
       opinion: [],

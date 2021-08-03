@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 
-const Show = ( ) => {
+const Show = (setUserID ) => {
   const [list, setList] = useState([]);
 
   useEffect(() => {
@@ -13,6 +13,11 @@ const Show = ( ) => {
       .then((dataInfo) => setList(dataInfo));
   }, []);
   console.log(list);
+
+  const handleEditClick = (id) => {
+    setUserID(id) 
+
+  }
 
   return (
     <div>
@@ -28,7 +33,7 @@ const Show = ( ) => {
             {item.opinion
               ? item.opinion.map((comment) => <h1>{comment.comment}</h1>)
               : null}
-            <a href="/" class="btn btn-outline-secondary">
+            <a href="/" onClick={() => handleEditClick(item._id)} class="btn btn-outline-secondary">
               Edit
             </a>
 

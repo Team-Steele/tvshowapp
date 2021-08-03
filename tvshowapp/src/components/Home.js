@@ -2,7 +2,7 @@ import React from 'react'
 import  { useState } from 'react'
 import { ResultCard } from './ResultCard'
 
-const Home = () => {
+const Home = (userID) => {
     const [query, setQuery] = useState('')
     const [results, setResults] = useState ([{}])
 
@@ -40,7 +40,7 @@ const Home = () => {
                             {results.map((show) => (
                                 <li key={show.id}>
                                     {/* {show.name} */}
-                                <ResultCard show={show} />
+                                <ResultCard show={show} userID={userID} />
                                 </li>
                             ))}
                         </ul>
