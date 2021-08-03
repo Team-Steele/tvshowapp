@@ -6,47 +6,64 @@ import { Route, Link, Switch } from 'react-router-dom';
 import Users from './components/Users';
 import Show from './components/Show';
 import Home from './components/Home'
+import HomePage from './components/HomePage';
 
 
 
 function App() {
 
+  const [userID, setUserID] = useState([])
+
+
+
   return (
-    <div className="container">
-    
-          <Router>
-            <div className="inner-content">
-              <div className="brand">
-                <Link to="/">
-                  <h3>Home</h3>
-                </Link>
-              </div>
+    <div
+      style={{
+        backgroundImage: `url("https://png.pngtree.com/png-vector/20190612/ourlarge/pngtree-tvtelevisionplayvideo-abstract-circle-background-flat-colo-png-image_1345048.jpg")`,
+      }}
+      className="container"
+    >
+      <Router>
+        <div className="inner-content">
+          <div className="brand">
+            <Link className="btn" to="/">
+              <h3>Home</h3>
+            </Link>
+          </div>
 
-              <ul className="nav-links">
-                <li>
-                  <Link to="/">Home</Link>
-                </li>
-                <li>
-                  <Link to="/shows">Shows</Link>
-                </li>
-                <li>
-                  <Link to="/users">Add</Link>
-                </li>
-              </ul>
-            </div>
-             
-            {/* <Users user={users} /> */}
+          <ul className="nav-links">
+            <li>
+              <Link className="btn" to="/search">
+                Search TV Shows
+              </Link>
+            </li>
+            <li>
+              <Link className="btn" to="/shows">
+                User Profiles
+              </Link>
+            </li>
+            <li>
+              <Link className="btn" to="/users">
+                Add User Profile
+              </Link>
+            </li>
+          </ul>
+        </div>
 
-          
-            
-              <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/users" component={Users} />
-              <Route path="/shows" component={Show} />
-          </Switch>
-        </Router>
-            
-    
+        {/* <Users user={users} /> */}
+
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/search" component={Home} userID={userID} />
+          <Route path="/users" component={Users} />
+          <Route
+            path="/shows"
+            component={Show}
+            setUserID={setUserID}
+            id={userID}
+          />
+        </Switch>
+      </Router>
     </div>
    
   );
