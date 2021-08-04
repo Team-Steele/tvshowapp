@@ -9,8 +9,11 @@ import Home from './components/Home'
 import HomePage from './components/HomePage';
 
 
+// const user = user.find(user => user._id == userID)
+
 
 function App() {
+
 
   const [userID, setUserID] = useState([])
 
@@ -37,6 +40,7 @@ function App() {
           </div>
          
           <ul className="nav-links">
+
             
             <li>
               <Link
@@ -73,6 +77,7 @@ function App() {
         </Switch>
       </Router>
     </div>
+   
   );
 }
 

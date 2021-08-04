@@ -5,6 +5,15 @@
   --secondary: #21d07a;
   --white: #fff;
 }
+.App {
+  background-color: lightskyblue;
+  text-align: left;
+  font-size: larger;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font: bold;
+  border: solid;
+  border-color: black;
+}
 
 body {
   font-family: "Source Sans Pro", sans-serif;

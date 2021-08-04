@@ -2,7 +2,9 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
 
+
 const Show = ({ setUserID, id, show }) => {
+
   const [list, setList] = useState([]);
   const [newList, setNewList] = useState([]);
 
@@ -21,10 +23,12 @@ const Show = ({ setUserID, id, show }) => {
   }, []);
   console.log(list);
 
+
   const handleClick = (id) => {
     console.log('handleClick Function', id);
     setUserID(id);
   };
+
 
   return (
     <div>
@@ -33,6 +37,7 @@ const Show = ({ setUserID, id, show }) => {
       {list.map((item) => {
         console.log(item);
         return (
+
           <div
             key={item.id}>
             <h4
@@ -79,6 +84,7 @@ const Show = ({ setUserID, id, show }) => {
               Delete
             </button>
             {/* <button className="btn btn-outline-secondary">Edit</button> */}
+
           </div>
         );
       })}

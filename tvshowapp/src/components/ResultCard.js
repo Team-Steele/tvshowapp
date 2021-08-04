@@ -4,14 +4,16 @@ import axios from 'axios'
 
 
 
+
 export const ResultCard = ({show, userID}) => {
   const [opinion, setOpinion] = useState(null)
   
 
   console.log("userID", userID)
- 
+
   const addTvShow = (show, userID) => {
     console.log("got the show", show)
+
     const submitData = {
       tvShows: show.name,
       opinion: opinion ? opinion : null,
