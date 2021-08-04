@@ -12,7 +12,7 @@ const Home = (userID) => {
     setQuery(e.target.value);
 
     fetch(
-      `https://api.themoviedb.org/3/search/tv?api_key=ddbfb66d7fd265a17d37fd4c77d34b51&language=en-US&page=1&include_adult=false&query=${e.target.value}`
+      `https://api.themoviedb.org/3/search/tv?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US&page=1&include_adult=false&query=${e.target.value}`
     )
       .then((res) => res.json())
       .then((data) => {
