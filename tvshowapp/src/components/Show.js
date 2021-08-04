@@ -1,8 +1,17 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
 
-const Show = (setUserID ) => {
+
+const Show = ({ setUserID, id, show }) => {
+
   const [list, setList] = useState([]);
+  const [newList, setNewList] = useState([]);
+
+  const deleteItem = (id) => {
+    axios.delete('/delete/' + id);
+    console.log(`${id}`);
+  };
 
   useEffect(() => {
     fetch('http://localhost:3001/shows')
@@ -14,28 +23,67 @@ const Show = (setUserID ) => {
   }, []);
   console.log(list);
 
-  const handleEditClick = (id) => {
-    setUserID(id) 
 
-  }
+  const handleClick = (id) => {
+    console.log('handleClick Function', id);
+    setUserID(id);
+  };
+
 
   return (
     <div>
-      <h1>Show Route</h1>
-      {list.map((item) => {
-        console.log(item)
-        return (
-          <div key={item.id}>
-            <h4>{item.user}</h4>
+      <h1>User Profiles</h1>
 
-            <h5>{item.tvShows}</h5>
-            <h5>{item._id}</h5>
+      {list.map((item) => {
+        console.log(item);
+        return (
+
+          <div
+            key={item.id}>
+            <h4
+              className="count-pill"
+              style={{
+                backgroundColor: 'gray',
+                color: 'black',
+                fontSize: '27px',
+                marginBottom: '5px',
+                marginTop: '5px',
+                fontWeight: 'bold',
+                   
+              }}
+            >
+              {item.user}
+            </h4>
+
+            {item.tvShows.map((show) => (
+              <div>
+                <li className="count-pill">{show}</li>
+              </div>
+            ))}
+
             {item.opinion
               ? item.opinion.map((comment) => <h1>{comment.comment}</h1>)
               : null}
-            <a href="/" onClick={() => handleEditClick(item._id)} class="btn btn-outline-secondary">
+
+            <a
+              style={{marginTop: '35px'}}
+              href="/search"
+              onClick={() => {
+                handleClick(item._id);
+              }}
+              
+              className="btn btn-outline-secondary"
+            >
               Edit
             </a>
+              
+            <button
+              onClick={() => deleteItem(item._id)}
+              className="btn btn-outline-secondary"
+            >
+              Delete
+            </button>
+            {/* <button className="btn btn-outline-secondary">Edit</button> */}
 
           </div>
         );

@@ -48,19 +48,22 @@ const Users = () => {
   }
    return (
      <div>
-       <h1>Add User</h1>
+       <h1 style={{paddingTop:'300px'}}>Add User</h1>
        <article>
          <form className="form" onSubmit={handleSubmit}>
-           <div className="form-control">
-             <label htmlFor="name">Name: </label>
+           <div className="input-wrapper">
+             <label className="btn" htmlFor="name">Name: </label>
              <input
+               className="count-pill"
                type="text"
                id="name"
                name="name"
                value={name}
+               placeholder="add user name"
                onChange={(e) => setName(e.target.value)}
              />
            </div>
+
            {/* <div className="form-control">
              <label htmlFor="tvShows">Enter TV Show(s): </label>
              <textarea
@@ -71,7 +74,9 @@ const Users = () => {
                onChange={(e) => setTvShows(e.target.value)}
              />
            </div> */}
-           <button type="submit">Submit</button>
+           <button className="btn" type="submit">
+             Submit
+           </button>
          </form>
        </article>
 
