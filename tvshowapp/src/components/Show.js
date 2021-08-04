@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 
+
 const Show = ({ setUserID, id, show }) => {
   const [list, setList] = useState([]);
   const [newList, setNewList] = useState([]);
@@ -32,15 +33,18 @@ const Show = ({ setUserID, id, show }) => {
       {list.map((item) => {
         console.log(item);
         return (
-          <div key={item.id}>
+          <div
+            key={item.id}>
             <h4
               className="count-pill"
               style={{
                 backgroundColor: 'gray',
+                color: 'black',
                 fontSize: '27px',
                 marginBottom: '5px',
+                marginTop: '5px',
                 fontWeight: 'bold',
-                textDecorationLine: 'underline',
+                   
               }}
             >
               {item.user}
@@ -57,15 +61,17 @@ const Show = ({ setUserID, id, show }) => {
               : null}
 
             <a
+              style={{marginTop: '35px'}}
               href="/search"
               onClick={() => {
                 handleClick(item._id);
               }}
+              
               className="btn btn-outline-secondary"
             >
               Edit
             </a>
-
+              
             <button
               onClick={() => deleteItem(item._id)}
               className="btn btn-outline-secondary"

@@ -18,22 +18,29 @@ function App() {
 
   return (
     <div
-      style={{
-        backgroundImage: `url("https://png.pngtree.com/png-vector/20190612/ourlarge/pngtree-tvtelevisionplayvideo-abstract-circle-background-flat-colo-png-image_1345048.jpg")`,
-      }}
+      // style={{
+      //   backgroundImage: `url("https://png.pngtree.com/png-vector/20190612/ourlarge/pngtree-tvtelevisionplayvideo-abstract-circle-background-flat-colo-png-image_1345048.jpg")`,
+      // }}
       className="container"
     >
       <Router>
-        <div className="inner-content">
+        <div 
+        style={{marginBottom: '40px'}}
+        className="inner-content">
           <div className="brand">
+          <li>
             <Link className="btn" to="/">
               <h3>Home</h3>
             </Link>
+            </li>
+            
           </div>
-
+         
           <ul className="nav-links">
+            
             <li>
-              <Link className="btn" to="/search">
+              <Link
+              className="btn" to="/search">
                 Search TV Shows
               </Link>
             </li>
@@ -48,6 +55,7 @@ function App() {
               </Link>
             </li>
           </ul>
+         
         </div>
 
         {/* <Users user={users} /> */}

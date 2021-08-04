@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { ResultCard } from './ResultCard';
+import './show.css'
 
 const Home = (userID) => {
   const [query, setQuery] = useState('');
@@ -27,13 +28,18 @@ const Home = (userID) => {
 
   return (
     <div
-      style={{ paddingTop: '100px', marginTop: '100px' }}
+      style={{ paddingTop: '50px', marginTop: '75px' }}
       className="add-page"
     >
       <div className="container">
         <div className="add-content">
           <div className="input-wrapper">
             <input
+              style={{position: 'absolute',
+                      backgroundColor: 'whitesmoke',
+                      maxWidth: "700px",
+                      top: '25px',
+                      color: 'black'}}
               type="text"
               placeholder="Search TV Show"
               value={query}

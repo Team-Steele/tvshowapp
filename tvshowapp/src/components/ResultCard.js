@@ -28,7 +28,11 @@ export const ResultCard = ({show, userID}) => {
 
 
     return (
-      <div className="results-card">
+      <div
+      style={{ 
+        position: 'relative',
+        top:'10px'}} 
+      className="results-card">
         <div className="poster-wrapper">
           <div className="info">
             <div className="header">
@@ -46,13 +50,17 @@ export const ResultCard = ({show, userID}) => {
           )}
         </div>
         <div className="controls">
-          <button className="btn" onClick={() => addTvShow(show)}>
+          <button 
+          style={{marginTop: '20px'}}
+          className="btn" onClick={() => addTvShow(show)}>
             Add Show
           </button>
         </div>
         <article>
           <form onSubmit={addTvShow}>
-            <div className="form-control">
+            <div
+            style={{color: 'white'}} 
+            className="form-control">
               <label htmlFor="opinion">Add Comment: </label>
               <textarea
                 type="text"
@@ -62,7 +70,9 @@ export const ResultCard = ({show, userID}) => {
                 onChange={(e) => setOpinion(e.target.value)}
               />
             </div>
-            <button>
+            <button
+            style={{fontSize: '15px', backgroundColor:"whitesmoke"
+                    , color: 'var(--primary)', borderRadius: '40px'}}>
               Submit
             </button>
           </form>
