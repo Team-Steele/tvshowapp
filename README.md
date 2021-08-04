@@ -109,6 +109,7 @@ Once we had all our changes and all the developers involved on this project revi
 
 The main branch would be used to deploy a live version on Heroku to host our app and deploy our App live to the internet in conjunction with Atlas cloud to store our data and connect it to our backend database and our frontend react app.
 Getting experience using GitHub and learning how to manage different branches was a great learning opportunity and an awsome way for the group to work together and build repore. GitHub was not an esy in any form but rather required more paitence in getting issues and conflicts resolved, however, once we got the hang of it we were able to merge our branches on our own. Team pulled togethre and create a great looking app.
+
 #
 <br><br>Example of final product:
 <br><br>
